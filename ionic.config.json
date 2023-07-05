@@ -1,0 +1,8 @@
+{
+  "name": "WeGlow test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "46ee933d"
+}
