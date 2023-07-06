@@ -1,25 +1,42 @@
 import { Component, inject } from '@angular/core';
 import { RefresherCustomEvent } from '@ionic/angular';
-import { MessageComponent } from '../message/message.component';
+import { Platform } from '@ionic/angular';
+import { RecipeComponentModule } from '../recipe/recipe.module'; // i'm lost now
 
-import { DataService, Message } from '../services/data.service';
+//import { DataService, Message } from '../services/data.service';
+//import { DataService, Recipes } from '../services/data.service';
+import { DataService, Recipes } from '../services/data.service.connections';
 
+const API_REPO = `https://jsonplaceholder.typicode.com/posts`;
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+
 })
 export class HomePage {
-  private data = inject(DataService);
-  constructor() {}
+  public data = inject(Platform);
+
+  public Recipes: Recipes[];
+
+  public linkLocation = '';
+
+  constructor() {
+     this.Recipes = this.getRecipes();
+
+  };
 
   refresh(ev: any) {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();
-    }, 3000);
-  }
+    }, 3000);};
 
-  getMessages(): Message[] {
-    return this.data.getMessages();
-  }
+    public getRecipes(): Recipes[] {
+      return this.Recipes;
+    }
+
+    public getRecipeById(id: number): Recipes {
+      return this.Recipes[id];
+    }
+
 }
