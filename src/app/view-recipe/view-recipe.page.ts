@@ -2,16 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonicModule, Platform } from '@ionic/angular';
-import { DataService, Recipes } from '../services/data.service';
+import { DataService, Recipes } from '../services/data.service.connections';
 
 @Component({
   selector: 'app-view-message',
-  templateUrl: './view-message.page.html',
-  styleUrls: ['./view-message.page.scss'],
+  templateUrl: './view-recipe.page.html',
+  styleUrls: ['./view-recipe.page.scss'],
 })
-export class ViewMessagePage implements OnInit {
+export class ViewRecipePage implements OnInit {
   public recipe!: Recipes;
-  private data = inject(DataService);
+  public data = inject(DataService);
   private activatedRoute = inject(ActivatedRoute);
   private platform = inject(Platform);
 

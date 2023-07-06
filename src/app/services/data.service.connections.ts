@@ -17,8 +17,6 @@ export interface Recipes {
   subject: string;
   date: string;
   id: number;
-  read: string;
-  uri: string;
 }
 
 @Injectable({
@@ -27,10 +25,15 @@ export interface Recipes {
 
 export class DataService  {
 
-  public Recipes: Recipes[] = [];
+  public recipes: Recipes[] = [];
+  //public Recipes: Recipes[] = this.getData();
   public linkLocation = '';
 
-  public getData() {
+  public constructor(){
+    this.recipes = this.getData();
+  }
+
+  private getData() {
     //let url = API_REPO;
     // Default options are marked with *
     const response = fetch(this.linkLocation, {
@@ -46,15 +49,28 @@ export class DataService  {
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       //body: JSON.stringify(data), // body data type must match "Content-Type" header
     });
-    return response; // parses JSON response into native JavaScript objects
+
+    //return response.json(); // parses JSON response into native JavaScript objects
+    // hmmm
+    return [response];
   }
 
   public set_url(uri:any){
     this.linkLocation =  uri;
   }
 
+
+
   public getURL() {
     return this.linkLocation;
+  }
+
+  public getRecipes(): Recipes[] {
+    return this.recipes;
+  }
+
+  public getRecipeById(id: number): Recipes {
+    return this.recipes[id];
   }
 
 }

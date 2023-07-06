@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     //path: 'message/:id',
     path: 'recipe/:id',
-    loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
+    loadChildren: () => import('./view-recipe/view-recipe.module').then( m => m.ViewRecipePageModule)
   },
   {
     path: '',

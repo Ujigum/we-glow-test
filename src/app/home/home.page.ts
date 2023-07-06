@@ -17,12 +17,12 @@ const API_REPO = `https://jsonplaceholder.typicode.com/posts`;
 export class HomePage {
   public data = inject(Platform);
 
-  public Recipes: Recipes[];
+  public recipes!: Recipes[];
 
   public linkLocation = '';
 
   constructor() {
-     this.Recipes = this.getRecipes();
+    this.recipes = this.setRecipes(this.linkLocation);
 
   };
 
@@ -31,12 +31,9 @@ export class HomePage {
       (ev as RefresherCustomEvent).detail.complete();
     }, 3000);};
 
-    public getRecipes(): Recipes[] {
-      return this.Recipes;
-    }
-
-    public getRecipeById(id: number): Recipes {
-      return this.Recipes[id];
-    }
+   setRecipes(theRecipe:any): Recipes[] {
+      this.recipes = theRecipe
+      return this.recipes;
+    };
 
 }
