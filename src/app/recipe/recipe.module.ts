@@ -15,6 +15,6 @@ import { RecipeComponent } from './recipe.component';
     RouterModule
   ],
   declarations: [RecipeComponent],
-  exports: [RecipeComponent]
+  exports: [RecipeComponentModule]
 })
 export class RecipeComponentModule {}
