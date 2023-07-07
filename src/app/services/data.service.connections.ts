@@ -1,6 +1,6 @@
 //const fetch = require('node-fetch');
 
-const API_REPO = `https://jsonplaceholder.typicode.com/posts`;
+const API_REPO = `https://api.weglowapp.net/v1/recipe-playlists`;
 
 //const API_REPO = `https://jsonplaceholder.typicode.com/posts`;
 const AUTH_KEY = "121181|T5eFtwEkEaDNCYC3k2BdkQYLtSOfX9f4sT57PE2";
