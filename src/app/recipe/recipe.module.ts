@@ -14,7 +14,7 @@ import { RecipeComponent } from './recipe.component';
     IonicModule,
     RouterModule
   ],
-  declarations: [RecipeComponent],
+  declarations: [RecipeComponentModule],
   exports: [RecipeComponentModule]
 })
 export class RecipeComponentModule {}
