@@ -36,7 +36,7 @@ export class DataService  {
     // Type 'Promise<Response>' is missing the following properties from type 'Recipes': fromName, subject, date, id
     //well duh, i dunno what the data looks like yet. -_-
     // thank you error, i'll debug this later.
-    // cool that the error is coming from the html now. B)
+    // cool that the error is coming from the html interface now. B)
   }
 
   public getData() {
