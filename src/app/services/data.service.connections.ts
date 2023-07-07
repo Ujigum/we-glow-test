@@ -1,15 +1,17 @@
 //const fetch = require('node-fetch');
 
-const API_REPO = `https://api.weglowapp.net/v1/recipe-playlists`;
+//const API_REPO = `https://api.weglowapp.net/v1/recipe-playlists`;
+const API_USER = `test@benmarsh.com`;
+const API_PASS = `password`;
 
-//const API_REPO = `https://jsonplaceholder.typicode.com/posts`;
+const API_REPO = `https://jsonplaceholder.typicode.com/posts`;// just work with  something easy, FFS!
 const AUTH_KEY = "121181|T5eFtwEkEaDNCYC3k2BdkQYLtSOfX9f4sT57PE2";
 
 // how do i turn the constants into a session? :S
 
 
 import { Injectable } from '@angular/core';
-//import { get } from 'http';
+import { get } from 'http';
 
 
 export interface Recipes {
@@ -31,6 +33,9 @@ export class DataService  {
 
   public constructor(){
     this.recipes = this.getData();
+    // Type 'Promise<Response>' is missing the following properties from type 'Recipes': fromName, subject, date, id
+    //well duh, i dunno what the data looks like yet -_-
+    // thank you error, i'll debug this later
   }
 
   private getData() {
