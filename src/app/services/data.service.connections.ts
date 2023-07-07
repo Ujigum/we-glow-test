@@ -34,11 +34,12 @@ export class DataService  {
   public constructor(){
     this.recipes = this.getData();
     // Type 'Promise<Response>' is missing the following properties from type 'Recipes': fromName, subject, date, id
-    //well duh, i dunno what the data looks like yet -_-
-    // thank you error, i'll debug this later
+    //well duh, i dunno what the data looks like yet. -_-
+    // thank you error, i'll debug this later.
+    // cool that the error is coming from the html now. B)
   }
 
-  private getData() {
+  public getData() {
     //let url = API_REPO;
     // Default options are marked with *
     const response = fetch(this.linkLocation, {
